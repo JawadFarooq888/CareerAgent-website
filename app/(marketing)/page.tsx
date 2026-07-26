@@ -1,0 +1,19 @@
+import { Hero } from "@/components/marketing/Hero";
+import { StatsSection } from "@/components/marketing/StatsSection";
+import { ServicesGrid } from "@/components/marketing/ServicesGrid";
+import { HowItWorks } from "@/components/marketing/HowItWorks";
+import { TestimonialsPreview } from "@/components/marketing/TestimonialsPreview";
+import { CTASection } from "@/components/marketing/CTASection";
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <StatsSection />
+      <ServicesGrid limit={6} />
+      <HowItWorks />
+      <TestimonialsPreview />
+      <CTASection />
+    </>
+  );
+}
