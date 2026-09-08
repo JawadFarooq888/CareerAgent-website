@@ -56,7 +56,7 @@ export default function OpengraphImage() {
             maxWidth: 900,
           }}
         >
-          Land your next job faster with a recruiter working for you.
+          Land your next job faster with a career agent working for you.
         </div>
         <div
           style={{

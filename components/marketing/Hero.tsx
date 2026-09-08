@@ -24,7 +24,7 @@ export function Hero() {
         </p>
         <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
           Land your next job faster with a{" "}
-          <span className="text-gold-400">recruiter working for you</span>, not the employer.
+          <span className="text-gold-400">career agent working for you</span>, not the employer.
         </h1>
         <p className="max-w-2xl text-lg leading-relaxed text-white/70">
           {siteConfig.description}

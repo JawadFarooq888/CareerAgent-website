@@ -3,7 +3,7 @@ export const services = [
     slug: "reverse-recruiting",
     title: "Reverse Recruiting",
     summary:
-      "I work as your personal recruiter — sourcing roles, tailoring applications, and managing outreach so you can focus on interviews, not job boards.",
+      "I work as your personal career agent — sourcing roles, tailoring applications, and managing outreach so you can focus on interviews, not job boards.",
     icon: "Target",
   },
   {

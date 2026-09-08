@@ -35,7 +35,7 @@ export function ComparisonSection() {
       <div className="container-page">
         <SectionHeading
           eyebrow="Why It Works"
-          title="Doing it alone vs. working with a reverse recruiter"
+          title="Doing it alone vs. working with a career agent"
           description="The difference isn't effort — it's having someone in your corner who knows how hiring actually works."
         />
 

@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "CareerAgent",
-  tagline: "Your Personal Reverse Recruiter",
+  tagline: "Your Personal Career Agent",
   description:
-    "CareerAgent is a personal reverse-recruiting and career-consulting service that helps professionals land interviews and job offers faster through hands-on job search support, resume and LinkedIn optimization, and interview coaching.",
+    "CareerAgent is a personal career agent and career-consulting service that helps professionals land interviews and job offers faster through hands-on job search support, resume and LinkedIn optimization, and interview coaching.",
   url: "https://careeragent.example.com",
   ownerName: "Alex Morgan",
   ownerTitle: "Founder & Career Agent",
