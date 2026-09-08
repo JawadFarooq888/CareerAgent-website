@@ -23,6 +23,7 @@ export default function AboutPage() {
         eyebrow="About Me"
         title={`Hi, I'm ${siteConfig.ownerName}`}
         description={siteConfig.ownerTitle}
+        avatarName={siteConfig.ownerName}
       />
 
       <section className="bg-white py-20 sm:py-28">
