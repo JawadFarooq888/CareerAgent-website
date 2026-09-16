@@ -20,16 +20,23 @@ export function ServicesGrid({ limit }: { limit?: number }) {
           {items.map((service) => {
             const Icon = iconMap[service.icon];
             return (
-              <div
+              <Link
                 key={service.slug}
-                className="group rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+                href={`/services#${service.slug}`}
+                className="group flex flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-navy-950 text-gold-400">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-navy-950 text-gold-400 transition-colors group-hover:bg-gold-500 group-hover:text-navy-950">
                   <Icon size={22} />
                 </div>
                 <h3 className="text-lg font-semibold text-navy-950">{service.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-900/70">{service.summary}</p>
-              </div>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-900/70">
+                  {service.summary}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-600">
+                  Learn more{" "}
+                  <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                </span>
+              </Link>
             );
           })}
         </div>
