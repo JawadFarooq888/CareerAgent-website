@@ -5,17 +5,30 @@ import { ComparisonSection } from "@/components/marketing/ComparisonSection";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { TestimonialsPreview } from "@/components/marketing/TestimonialsPreview";
 import { CTASection } from "@/components/marketing/CTASection";
+import { FadeIn } from "@/components/marketing/FadeIn";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
-      <StatsSection />
-      <ServicesGrid limit={6} />
-      <ComparisonSection />
-      <HowItWorks />
-      <TestimonialsPreview />
-      <CTASection />
+      <FadeIn>
+        <StatsSection />
+      </FadeIn>
+      <FadeIn>
+        <ServicesGrid limit={6} />
+      </FadeIn>
+      <FadeIn>
+        <ComparisonSection />
+      </FadeIn>
+      <FadeIn>
+        <HowItWorks />
+      </FadeIn>
+      <FadeIn>
+        <TestimonialsPreview />
+      </FadeIn>
+      <FadeIn>
+        <CTASection />
+      </FadeIn>
     </>
   );
 }

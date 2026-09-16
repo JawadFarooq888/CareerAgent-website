@@ -12,6 +12,16 @@ export function Hero() {
   return (
     <section className="relative overflow-hidden bg-navy-950">
       <div
+        className="pointer-events-none absolute inset-0 opacity-[0.15]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+          maskImage: "radial-gradient(80% 60% at 50% 0%, black 30%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(80% 60% at 50% 0%, black 30%, transparent 100%)",
+        }}
+      />
+      <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:

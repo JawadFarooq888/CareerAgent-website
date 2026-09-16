@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { navLinks, siteConfig } from "@/lib/site-config";
@@ -10,10 +10,23 @@ import { cn } from "@/lib/utils";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-white/90 backdrop-blur">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b bg-white/90 backdrop-blur transition-shadow duration-200",
+        scrolled ? "border-black/5 shadow-sm" : "border-transparent"
+      )}
+    >
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
           <span className="text-lg font-bold tracking-tight text-navy-950 sm:text-xl">
