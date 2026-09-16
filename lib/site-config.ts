@@ -4,8 +4,8 @@ export const siteConfig = {
   description:
     "CareerAgent is a personal career agent and career-consulting service that helps professionals land interviews and job offers faster through hands-on job search support, resume and LinkedIn optimization, and interview coaching.",
   url: "https://careeragent.example.com",
-  ownerName: "Alex Morgan",
-  ownerTitle: "Founder & Career Agent",
+  ownerName: "Arbab Jahanzaib",
+  ownerTitle: "CEO & Career Agent",
   email: "abbt989@gmail.com",
   phone: "+92 345 8137005",
   whatsappNumber: "923458137005",
