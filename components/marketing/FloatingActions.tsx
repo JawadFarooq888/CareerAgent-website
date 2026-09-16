@@ -8,7 +8,7 @@ export function FloatingActions() {
   const [chatOpen, setChatOpen] = useState(false);
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-20 right-5 z-50 flex flex-col items-end gap-3 lg:bottom-5">
       {chatOpen && (
         <div className="mb-1 w-72 rounded-2xl border border-black/10 bg-white p-4 shadow-xl">
           <div className="mb-2 flex items-center justify-between">

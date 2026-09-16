@@ -18,7 +18,7 @@ export function TestimonialsPreview() {
           {testimonials.map((t) => (
             <figure
               key={t.name}
-              className="flex flex-col rounded-2xl border border-black/5 bg-navy-950/[0.02] p-7"
+              className="flex flex-col rounded-2xl border border-black/5 bg-navy-950/[0.02] p-7 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
             >
               <StarRating rating={t.rating} />
               <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-navy-900/80">

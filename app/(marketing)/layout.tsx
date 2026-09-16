@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/marketing/Navbar";
 import { Footer } from "@/components/marketing/Footer";
 import { FloatingActions } from "@/components/marketing/FloatingActions";
+import { StickyMobileCTA } from "@/components/marketing/StickyMobileCTA";
 import { JsonLd } from "@/components/marketing/JsonLd";
 import { siteConfig } from "@/lib/site-config";
 
@@ -28,6 +29,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
       <main className="flex-1">{children}</main>
       <Footer />
       <FloatingActions />
+      <StickyMobileCTA />
     </>
   );
 }

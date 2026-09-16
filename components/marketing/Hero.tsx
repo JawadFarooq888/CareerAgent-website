@@ -58,6 +58,9 @@ export function Hero() {
             Explore Services
           </Button>
         </div>
+        <p className="text-xs text-white/40">
+          Free 30-minute call &middot; No obligation &middot; Replies within 1 business day
+        </p>
       </div>
     </section>
   );

@@ -22,10 +22,10 @@ export function PricingCard({
   return (
     <div
       className={cn(
-        "flex flex-col rounded-2xl border p-8",
+        "flex flex-col rounded-2xl border p-8 transition-transform duration-200 hover:-translate-y-1",
         highlighted
-          ? "border-gold-500 bg-navy-950 text-white shadow-xl"
-          : "border-black/5 bg-white text-navy-950"
+          ? "border-gold-500 bg-navy-950 text-white shadow-xl lg:scale-105"
+          : "border-black/5 bg-white text-navy-950 hover:shadow-lg"
       )}
     >
       {highlighted && (
