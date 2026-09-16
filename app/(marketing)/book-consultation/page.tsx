@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/PageHero";
-import { CalendlyEmbed } from "@/components/marketing/CalendlyEmbed";
 import { ConsultationForm } from "@/components/marketing/ConsultationForm";
 
 export const metadata: Metadata = {
@@ -14,17 +13,12 @@ export default function BookConsultationPage() {
       <PageHero
         eyebrow="Book a Consultation"
         title="Let's build your job search plan"
-        description="Pick a time below, or send your details and I'll reach out to schedule personally."
+        description="Send your details below and I'll personally reach out within one business day to schedule a time."
       />
 
       <section className="bg-white py-20 sm:py-28">
-        <div className="container-page grid gap-10 lg:grid-cols-5">
-          <div className="lg:col-span-3">
-            <CalendlyEmbed />
-          </div>
-          <div className="lg:col-span-2">
-            <ConsultationForm />
-          </div>
+        <div className="container-page mx-auto max-w-xl">
+          <ConsultationForm />
         </div>
       </section>
     </>

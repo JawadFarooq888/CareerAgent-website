@@ -45,7 +45,6 @@ See `.env.example` for the full list. Required to run anything beyond static pag
 | `DATABASE_URL` | Yes | Postgres connection string. A free [Neon](https://neon.tech) database works well with Vercel. |
 | `AUTH_SECRET` | Yes | Generate with `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` |
 | `RESEND_API_KEY` | No | Without it, lead notification emails are logged to the console instead of sent. |
-| `NEXT_PUBLIC_CALENDLY_URL` | No | Powers the embed on `/book-consultation`. |
 | `NEXT_PUBLIC_CHAT_WIDGET_SRC` | No | Reserved for wiring in a real chat provider (Tawk.to, Crisp, etc.) later. |
 | `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4 measurement ID. |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | No | Google Search Console HTML verification code. |
@@ -66,7 +65,7 @@ Access is protected by `proxy.ts` (Next.js 16's replacement for `middleware.ts`)
 
 Everything below is realistic **placeholder copy** — replace it with real information before going live:
 
-- `lib/site-config.ts` — business name, owner name/title, email, phone, WhatsApp number, social links, Calendly URL
+- `lib/site-config.ts` — business name, owner name/title, email, phone, WhatsApp number, social links
 - `lib/placeholder-data.ts` — services, FAQs, testimonials (fabricated), pricing packages
 - `lib/blog.ts` — sample blog posts
 - `app/(marketing)/privacy-policy` and `terms-conditions` — marked `[Placeholder content]`; have these reviewed by a legal professional

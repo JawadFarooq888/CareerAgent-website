@@ -14,12 +14,17 @@ export async function sendLeadNotification(params: {
   }
 
   try {
-    await resend.emails.send({
-      from: `${siteConfig.name} <notifications@${siteConfig.name.toLowerCase()}.example.com>`,
+    const { error } = await resend.emails.send({
+      // Resend's shared sending domain works without verifying your own domain,
+      // but only delivers to the email address your Resend account was created with.
+      from: process.env.EMAIL_FROM ?? `${siteConfig.name} <onboarding@resend.dev>`,
       to: siteConfig.email,
       subject: params.subject,
       html: params.html,
     });
+    if (error) {
+      console.error("Resend rejected the notification email:", error);
+    }
   } catch (error) {
     console.error("Failed to send lead notification email:", error);
   }

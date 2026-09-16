@@ -15,7 +15,6 @@ export const siteConfig = {
     twitter: "https://twitter.com/careeragent",
     instagram: "https://instagram.com/careeragent",
   },
-  calendlyUrl: process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/careeragent/consultation",
   chatWidgetSrc: process.env.NEXT_PUBLIC_CHAT_WIDGET_SRC ?? "",
 } as const;
 
