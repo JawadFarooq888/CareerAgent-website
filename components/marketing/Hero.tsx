@@ -26,8 +26,9 @@ export function Hero() {
           Land your next job faster with a{" "}
           <span className="text-gold-400">career agent working for you</span>, not the employer.
         </h1>
-        <p className="max-w-2xl text-lg leading-relaxed text-white/70">
-          {siteConfig.description}
+        <p className="max-w-xl text-lg leading-relaxed text-white/70">
+          I handle the job search grind — finding roles, tailoring applications, and coaching you
+          through interviews — so you can focus on landing the offer.
         </p>
 
         <ul className="flex flex-wrap gap-x-6 gap-y-2">

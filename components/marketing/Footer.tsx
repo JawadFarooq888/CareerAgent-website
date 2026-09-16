@@ -11,7 +11,8 @@ export function Footer() {
         <div className="md:col-span-2">
           <span className="text-xl font-bold text-white">{siteConfig.name}</span>
           <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/60">
-            {siteConfig.description}
+            Hands-on job search support, resume and LinkedIn optimization, and interview coaching
+            — so you land offers faster.
           </p>
           <div className="mt-5 flex gap-4">
             <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/60 hover:text-gold-400">

@@ -39,56 +39,38 @@ export function ComparisonSection() {
           description="The difference isn't effort — it's having someone in your corner who knows how hiring actually works."
         />
 
-        <div className="mt-14 overflow-x-auto">
-          <table className="w-full min-w-[640px] border-separate border-spacing-0 overflow-hidden rounded-2xl border border-black/5 bg-white">
-            <thead>
-              <tr>
-                <th className="w-1/5 border-b border-black/5 bg-navy-950/[0.02] p-5 text-left text-sm font-semibold text-navy-900/50">
-                  &nbsp;
-                </th>
-                <th className="border-b border-black/5 bg-navy-950/[0.02] p-5 text-left text-sm font-semibold text-navy-900/60">
-                  <span className="inline-flex items-center gap-2">
-                    <X size={16} className="text-red-500" /> On Your Own
-                  </span>
-                </th>
-                <th className="border-b border-gold-500/30 bg-gold-500/10 p-5 text-left text-sm font-semibold text-navy-950">
-                  <span className="inline-flex items-center gap-2">
-                    <Check size={16} className="text-gold-600" /> With CareerAgent
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, index) => (
-                <tr key={row.label}>
-                  <td
-                    className={
-                      "p-5 text-sm font-semibold text-navy-950" +
-                      (index !== rows.length - 1 ? " border-b border-black/5" : "")
-                    }
-                  >
+        <div className="mx-auto mt-14 grid max-w-4xl gap-5 sm:grid-cols-2">
+          <div className="rounded-2xl border border-black/5 bg-white p-6 sm:p-8">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-navy-900/50">
+              <X size={16} className="text-red-500" /> On Your Own
+            </span>
+            <ul className="mt-5 space-y-3">
+              {rows.map((row) => (
+                <li key={row.label} className="rounded-lg bg-navy-950/[0.03] p-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-navy-900/40">
                     {row.label}
-                  </td>
-                  <td
-                    className={
-                      "p-5 text-sm text-navy-900/60" +
-                      (index !== rows.length - 1 ? " border-b border-black/5" : "")
-                    }
-                  >
-                    {row.alone}
-                  </td>
-                  <td
-                    className={
-                      "bg-gold-500/5 p-5 text-sm font-medium text-navy-950" +
-                      (index !== rows.length - 1 ? " border-b border-black/5" : "")
-                    }
-                  >
-                    {row.withUs}
-                  </td>
-                </tr>
+                  </p>
+                  <p className="mt-1 text-sm text-navy-900/70">{row.alone}</p>
+                </li>
               ))}
-            </tbody>
-          </table>
+            </ul>
+          </div>
+
+          <div className="rounded-2xl border border-gold-500/30 bg-white p-6 shadow-sm sm:p-8">
+            <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold-600">
+              <Check size={16} /> With CareerAgent
+            </span>
+            <ul className="mt-5 space-y-3">
+              {rows.map((row) => (
+                <li key={row.label} className="rounded-lg bg-gold-500/5 p-3">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-navy-900/40">
+                    {row.label}
+                  </p>
+                  <p className="mt-1 text-sm font-medium text-navy-950">{row.withUs}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
