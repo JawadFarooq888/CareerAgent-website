@@ -4,6 +4,8 @@ import { ServicesGrid } from "@/components/marketing/ServicesGrid";
 import { ComparisonSection } from "@/components/marketing/ComparisonSection";
 import { HowItWorks } from "@/components/marketing/HowItWorks";
 import { TestimonialsPreview } from "@/components/marketing/TestimonialsPreview";
+import { BlogPreview } from "@/components/marketing/BlogPreview";
+import { FaqPreview } from "@/components/marketing/FaqPreview";
 import { CTASection } from "@/components/marketing/CTASection";
 import { FadeIn } from "@/components/marketing/FadeIn";
 
@@ -25,6 +27,12 @@ export default function HomePage() {
       </FadeIn>
       <FadeIn>
         <TestimonialsPreview />
+      </FadeIn>
+      <FadeIn>
+        <BlogPreview />
+      </FadeIn>
+      <FadeIn>
+        <FaqPreview />
       </FadeIn>
       <FadeIn>
         <CTASection />

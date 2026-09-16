@@ -4,7 +4,7 @@ import type { BlogPostData } from "@/lib/blog";
 
 export function BlogPostCard({ post }: { post: BlogPostData }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition-shadow hover:shadow-md">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
       <div className="flex h-40 items-center justify-center bg-gradient-to-br from-navy-950 to-navy-700">
         <span className="text-xs font-semibold uppercase tracking-widest text-gold-400">
           {post.category}
