@@ -11,7 +11,7 @@ export async function subscribeToNewsletter(
 ): Promise<ActionResult> {
   const parsed = newsletterSchema.safeParse({
     email: formData.get("email"),
-    honeypot: formData.get("company"),
+    honeypot: formData.get("company") || undefined,
   });
 
   if (!parsed.success) {

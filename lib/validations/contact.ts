@@ -6,7 +6,7 @@ export const contactSchema = z.object({
   phone: z.string().optional(),
   subject: z.string().optional(),
   message: z.string().min(10, "Please provide a bit more detail (at least 10 characters)."),
-  honeypot: z.string().max(0).optional(),
+  honeypot: z.string().optional(),
   startedAt: z.string().optional(),
 });
 
@@ -17,7 +17,7 @@ export const consultationSchema = z.object({
   email: z.string().email("Please enter a valid email address."),
   phone: z.string().optional(),
   message: z.string().min(10, "Tell us a bit about your goals (at least 10 characters)."),
-  honeypot: z.string().max(0).optional(),
+  honeypot: z.string().optional(),
   startedAt: z.string().optional(),
 });
 

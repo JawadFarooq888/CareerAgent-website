@@ -24,8 +24,8 @@ export async function submitContactForm(
     phone: formData.get("phone") || undefined,
     subject: formData.get("subject") || undefined,
     message: formData.get("message"),
-    honeypot: formData.get("company"),
-    startedAt: formData.get("startedAt"),
+    honeypot: formData.get("company") || undefined,
+    startedAt: formData.get("startedAt") || undefined,
   });
 
   if (!parsed.success) {
@@ -72,8 +72,8 @@ export async function submitConsultationRequest(
     email: formData.get("email"),
     phone: formData.get("phone") || undefined,
     message: formData.get("message"),
-    honeypot: formData.get("company"),
-    startedAt: formData.get("startedAt"),
+    honeypot: formData.get("company") || undefined,
+    startedAt: formData.get("startedAt") || undefined,
   });
 
   if (!parsed.success) {
