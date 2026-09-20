@@ -9,6 +9,7 @@ A Next.js website for a Career Agent / Reverse Recruiter business: marketing sit
 - **Prisma 7** + PostgreSQL (driver adapter via `@prisma/adapter-pg`) — works with [Neon](https://neon.tech)
 - **NextAuth (Auth.js) v5** — Credentials login for the admin panel
 - **Resend** — email notifications (optional; logs to console if unset)
+- **Paddle Billing** — Pricing page checkout (optional; falls back to the consultation flow if unset)
 - **Zod** — form validation on every Server Action
 
 ## Getting Started
@@ -45,6 +46,9 @@ See `.env.example` for the full list. Required to run anything beyond static pag
 | `DATABASE_URL` | Yes | Postgres connection string. A free [Neon](https://neon.tech) database works well with Vercel. |
 | `AUTH_SECRET` | Yes | Generate with `node -e "console.log(require('crypto').randomBytes(32).toString('base64'))"` |
 | `RESEND_API_KEY` | No | Without it, lead notification emails are logged to the console instead of sent. |
+| `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` | No | Without it, Pricing page CTAs fall back to "Book a Consultation" instead of a Paddle checkout. See **Payments** below. |
+| `NEXT_PUBLIC_PADDLE_ENV` | No | `sandbox` (default, for testing) or `production`. |
+| `NEXT_PUBLIC_PADDLE_PRICE_STARTER` / `NEXT_PUBLIC_PADDLE_PRICE_ACCELERATOR` | No | Paddle price IDs (`pri_...`) for the Starter and Accelerator packages. A package without a price ID always falls back to the consultation flow. |
 | `NEXT_PUBLIC_CHAT_WIDGET_SRC` | No | Reserved for wiring in a real chat provider (Tawk.to, Crisp, etc.) later. |
 | `NEXT_PUBLIC_GA_ID` | No | Google Analytics 4 measurement ID. |
 | `NEXT_PUBLIC_GSC_VERIFICATION` | No | Google Search Console HTML verification code. |
@@ -60,6 +64,35 @@ The admin panel (`/admin`) manages:
 - **Content** — generic key/value overrides (`ContentBlock` model) for future use via `getContentBlock()` in `lib/content.ts`
 
 Access is protected by `proxy.ts` (Next.js 16's replacement for `middleware.ts`), which redirects unauthenticated requests to `/admin/login`.
+
+## Payments (Paddle)
+
+The Pricing page (`components/marketing/PricingCard.tsx`) checks `isPaddleConfigured()` on
+every render: if `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN` is unset, or a specific package has no
+matching price ID, that package's button always falls back to "Book a Consultation" — nothing
+breaks if Paddle isn't set up yet.
+
+To go live with real checkout:
+
+1. **Create a Paddle account** at [paddle.com](https://paddle.com). Paddle acts as merchant of
+   record (handles card processing, US sales tax, and refunds for you).
+2. **Set up a payout method.** Paddle pays out via wire transfer or Payoneer. For a
+   Pakistan-based seller, Payoneer is the practical route — Pakistan doesn't currently support
+   direct payouts from most other processors (e.g. individual PayPal accounts can't receive
+   funds in Pakistan). Create a free Payoneer account and link it in Paddle's payout settings.
+3. **Get a client-side token**: Paddle dashboard → Developer Tools → Authentication.
+4. **Create a product + price** for each paid package (Starter, Accelerator) under Catalog →
+   Products. Copy each price's ID (`pri_...`).
+5. Set `NEXT_PUBLIC_PADDLE_CLIENT_TOKEN`, `NEXT_PUBLIC_PADDLE_PRICE_STARTER`, and
+   `NEXT_PUBLIC_PADDLE_PRICE_ACCELERATOR` in your environment (start with
+   `NEXT_PUBLIC_PADDLE_ENV=sandbox` to test with fake cards before switching to `production`).
+
+The "Executive" package is intentionally left without a price ID — it's custom-quoted, so it
+always routes to the consultation/contact flow regardless of Paddle configuration.
+
+Paddle's cut is roughly 5% + $0.50 per transaction, plus a currency-conversion margin on
+non-USD cards — budget for ~7% effective fees, and note funds typically become payable to you
+about 13 days after a sale (Paddle's standard hold period).
 
 ## Content To Replace Before Launch
 

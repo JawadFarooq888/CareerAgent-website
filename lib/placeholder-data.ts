@@ -169,6 +169,10 @@ export const pricingPackages = [
     ],
     highlighted: false,
     ctaText: "Get Started",
+    // Set to the matching Paddle price ID (e.g. "pri_01...") once created in
+    // your Paddle dashboard to enable direct checkout. Leave null to fall
+    // back to "Book a Consultation".
+    paddlePriceId: process.env.NEXT_PUBLIC_PADDLE_PRICE_STARTER || null,
   },
   {
     name: "Accelerator",
@@ -184,6 +188,7 @@ export const pricingPackages = [
     ],
     highlighted: true,
     ctaText: "Book a Consultation",
+    paddlePriceId: process.env.NEXT_PUBLIC_PADDLE_PRICE_ACCELERATOR || null,
   },
   {
     name: "Executive",
@@ -199,5 +204,6 @@ export const pricingPackages = [
     ],
     highlighted: false,
     ctaText: "Contact Me",
+    paddlePriceId: null,
   },
 ] as const;

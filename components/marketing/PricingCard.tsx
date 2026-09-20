@@ -1,6 +1,8 @@
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/Button";
+import { PaddleCheckoutButton } from "@/components/marketing/PaddleCheckoutButton";
+import { isPaddleConfigured } from "@/lib/paddle-config";
 
 export function PricingCard({
   name,
@@ -10,6 +12,7 @@ export function PricingCard({
   features,
   highlighted,
   ctaText,
+  paddlePriceId,
 }: {
   name: string;
   price: string;
@@ -18,7 +21,10 @@ export function PricingCard({
   features: readonly string[];
   highlighted?: boolean;
   ctaText: string;
+  paddlePriceId?: string | null;
 }) {
+  const canCheckout = isPaddleConfigured() && !!paddlePriceId;
+
   return (
     <div
       className={cn(
@@ -59,13 +65,23 @@ export function PricingCard({
         ))}
       </ul>
 
-      <Button
-        href="/book-consultation"
-        variant={highlighted ? "primary" : "outline"}
-        className={cn("mt-8 w-full", !highlighted && "border-navy-950")}
-      >
-        {ctaText}
-      </Button>
+      {canCheckout ? (
+        <PaddleCheckoutButton
+          priceId={paddlePriceId!}
+          variant={highlighted ? "primary" : "outline"}
+          className={cn("mt-8 w-full", !highlighted && "border-navy-950")}
+        >
+          Buy Now
+        </PaddleCheckoutButton>
+      ) : (
+        <Button
+          href="/book-consultation"
+          variant={highlighted ? "primary" : "outline"}
+          className={cn("mt-8 w-full", !highlighted && "border-navy-950")}
+        >
+          {ctaText}
+        </Button>
+      )}
     </div>
   );
 }

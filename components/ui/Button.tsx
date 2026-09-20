@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
-type ButtonSize = "sm" | "md" | "lg";
+export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
+export type ButtonSize = "sm" | "md" | "lg";
 
-const variantClasses: Record<ButtonVariant, string> = {
+export const buttonVariantClasses: Record<ButtonVariant, string> = {
   primary:
     "bg-gold-500 text-navy-950 shadow-sm hover:bg-gold-400 hover:shadow-md hover:shadow-gold-500/20 focus-visible:outline-gold-500",
   secondary:
@@ -14,14 +14,18 @@ const variantClasses: Record<ButtonVariant, string> = {
   ghost: "text-navy-900 hover:bg-navy-900/5",
 };
 
-const sizeClasses: Record<ButtonSize, string> = {
+export const buttonSizeClasses: Record<ButtonSize, string> = {
   sm: "px-4 py-2 text-sm",
   md: "px-6 py-3 text-sm",
   lg: "px-8 py-4 text-base",
 };
 
-const base =
+export const buttonBaseClasses =
   "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 disabled:opacity-50 disabled:pointer-events-none disabled:hover:translate-y-0";
+
+const variantClasses = buttonVariantClasses;
+const sizeClasses = buttonSizeClasses;
+const base = buttonBaseClasses;
 
 interface CommonProps {
   variant?: ButtonVariant;
