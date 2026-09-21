@@ -91,6 +91,57 @@ const posts: BlogPostData[] = [
       "During interviews, come prepared with examples of how you stay organized and proactive without in-person oversight — this is the number one concern hiring managers have about remote hires.",
     ],
   },
+  {
+    slug: "what-is-a-reverse-recruiter",
+    title: "What Is a Reverse Recruiter? (And Is It Worth Paying For)",
+    excerpt:
+      "A reverse recruiter works for the job seeker, not the employer. Here's what the role actually involves, and how to tell if it's worth the investment for your search.",
+    category: "Reverse Recruiting",
+    publishedAt: "2026-07-10",
+    seoTitle: "What Is a Reverse Recruiter? | Reverse Recruiting Explained",
+    seoDescription:
+      "Reverse recruiters work for job seekers instead of employers. Learn exactly what they do, how they differ from a career coach, and whether it's worth paying for.",
+    content: [
+      "A traditional recruiter is paid by a company to fill an open role — their loyalty, and their paycheck, belongs to the employer. A reverse recruiter flips that relationship: they're hired directly by the job seeker, and their only job is to get that one person hired.",
+      "In practice, that means a reverse recruiter takes over the parts of the job search that eat the most time and produce the least reward: finding roles that actually match your background, tailoring your resume and application to each one, tracking outreach so nothing falls through the cracks, and often submitting applications on your behalf. Some also manage direct outreach to hiring managers and recruiters at target companies — the kind of warm, proactive contact that job boards can't replicate.",
+      "This is different from a career coach, who typically advises on strategy but leaves the execution to you, and different from a staffing agency, which represents the employer's interest even when it's presented as helping the candidate. A reverse recruiter is closer to having a personal agent: someone whose incentive is fully aligned with getting you hired faster, not filling a specific requisition.",
+      "Whether it's worth paying for usually comes down to two things: how much your time is worth, and how much a faster job search is worth to you financially. If you're currently employed and searching quietly, or if every week of unemployment has a real dollar cost, offloading 10-15 hours a week of tailoring and tracking to someone else can pay for itself many times over — especially when it also means a more consistent, professional application than most candidates submit on their own.",
+    ],
+  },
+  {
+    slug: "should-you-use-chatgpt-to-write-your-resume",
+    title: "Should You Use ChatGPT to Write Your Resume in 2026?",
+    excerpt:
+      "AI tools can draft a resume in seconds, but recruiters are getting better at spotting them. Here's where ChatGPT actually helps — and where it quietly costs you interviews.",
+    category: "Resume Tips",
+    publishedAt: "2026-08-14",
+    seoTitle: "Should You Use ChatGPT for Your Resume? What Actually Works",
+    seoDescription:
+      "ChatGPT can help brainstorm resume bullet points, but generic AI resumes are getting flagged by recruiters. Here's how to use AI without hurting your job search.",
+    content: [
+      "ChatGPT and similar tools have made it trivially easy to generate a resume in under a minute — and for a first draft or a brainstorming pass, that's genuinely useful. The problem is what happens next: most people copy the output with light edits, and the result reads exactly like what it is.",
+      "Recruiters who screen hundreds of resumes a month have started recognizing the pattern quickly: the same overused phrases ('proven track record,' 'results-driven professional'), the same generic bullet structure, and achievements that sound impressive but are vague enough to apply to anyone. That sameness is the opposite of what gets a resume noticed, and some hiring managers now view an obviously AI-generated resume as a signal the candidate didn't put in real effort.",
+      "There's also a more practical issue: ChatGPT doesn't know your actual achievements, the specific metrics that make them credible, or which keywords the applicant tracking system for a specific job is scanning for. Left unedited, it tends to invent plausible-sounding but generic accomplishments rather than sharpening your real ones.",
+      "The tools are genuinely useful for narrower jobs — rephrasing an awkward sentence, checking for consistent tense, or generating a first pass at a cover letter you'll heavily rewrite. What they can't replace is someone who knows how ATS parsing actually works, has read thousands of job descriptions, and can pull the specific, quantified achievements out of your experience that a generic prompt never will.",
+    ],
+  },
+  {
+    slug: "how-much-does-a-career-coach-or-resume-writer-cost",
+    title: "How Much Does a Career Coach or Resume Writer Cost?",
+    excerpt:
+      "Prices for career services range from under $100 to several thousand dollars. Here's what actually drives the difference, and how to figure out what's worth paying for.",
+    category: "Pricing & Value",
+    publishedAt: "2026-09-05",
+    seoTitle: "Career Coach & Resume Writer Cost Guide (2026)",
+    seoDescription:
+      "What does a career coach, resume writer, or reverse recruiter actually cost? A breakdown of pricing tiers and what drives the difference in value.",
+    content: [
+      "Career services span an unusually wide price range. A basic resume template or a single 30-minute coaching call might run $50-150. A professionally rewritten, ATS-optimized resume from an experienced writer typically lands between $200-400. Full-service reverse recruiting — where someone manages your applications and outreach on an ongoing basis — is usually priced monthly, commonly $500-1,000+ depending on volume and level of service. Executive-level, white-glove search support can run into the thousands.",
+      "The difference isn't arbitrary. A $50 resume template gives you formatting; a $300 resume rewrite gives you a document rebuilt around your actual achievements and tuned for ATS parsing; a monthly reverse-recruiting retainer gives you ongoing, done-for-you execution instead of a one-time deliverable. You're paying for depth of work and how much of the process is handled for you, not just for a document.",
+      "The right tier depends on where you're stuck. If your resume is solid but you're not getting enough volume out the door, a one-time optimization package is usually enough. If you're actively job searching while working full-time, or you've been searching for months without traction, the ongoing done-for-you model tends to be worth the higher monthly cost simply because of the hours it gives back.",
+      "A useful gut check before paying for anything: ask what happens after the deliverable is done. A one-time resume rewrite should still leave you with a document you can use for months. A retainer should come with a clear, ongoing weekly cadence — job targets, applications submitted, and outreach made — not just vague 'support.' If a provider can't describe that cadence specifically, that's a good reason to look elsewhere.",
+    ],
+  },
 ];
 
 export function getAllBlogPosts(): BlogPostData[] {
