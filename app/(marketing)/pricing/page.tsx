@@ -3,7 +3,9 @@ import { PageHero } from "@/components/marketing/PageHero";
 import { PricingCard } from "@/components/marketing/PricingCard";
 import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 import { FadeIn } from "@/components/marketing/FadeIn";
+import { JsonLd } from "@/components/marketing/JsonLd";
 import { pricingPackages, faqs } from "@/lib/placeholder-data";
+import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -11,8 +13,36 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  const pricingJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Career Coaching and Reverse Recruiting",
+    provider: {
+      "@type": "ProfessionalService",
+      name: siteConfig.name,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Pricing Packages",
+      itemListElement: pricingPackages
+        .filter((pkg) => pkg.price.startsWith("$"))
+        .map((pkg) => ({
+          "@type": "Offer",
+          name: pkg.name,
+          price: pkg.price.replace("$", ""),
+          priceCurrency: "USD",
+          description: pkg.description,
+        })),
+    },
+  };
+
   return (
     <>
+      <JsonLd data={pricingJsonLd} />
       <PageHero
         eyebrow="Pricing"
         title="Simple, transparent pricing"

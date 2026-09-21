@@ -14,6 +14,11 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
     url: siteConfig.url,
     email: siteConfig.email,
     telephone: siteConfig.phone,
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    priceRange: "$249-$799",
     founder: {
       "@type": "Person",
       name: siteConfig.ownerName,

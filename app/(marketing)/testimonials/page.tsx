@@ -13,17 +13,17 @@ export const metadata: Metadata = {
 };
 
 export default function TestimonialsPage() {
-  const averageRating =
-    testimonials.reduce((sum, t) => sum + t.rating, 0) / testimonials.length;
-
+  // Note: no aggregateRating/review schema here on purpose — Google's
+  // structured data policy prohibits review markup that isn't from real,
+  // verifiable reviewers. Add it back once the testimonials above are
+  // replaced with real client reviews.
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Service",
     name: `${siteConfig.name} Career Consulting`,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: averageRating.toFixed(1),
-      reviewCount: testimonials.length,
+    provider: {
+      "@type": "ProfessionalService",
+      name: siteConfig.name,
     },
   };
 

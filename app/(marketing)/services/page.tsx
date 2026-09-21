@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/marketing/PageHero";
 import { CTASection } from "@/components/marketing/CTASection";
 import { FadeIn } from "@/components/marketing/FadeIn";
+import { JsonLd } from "@/components/marketing/JsonLd";
 import { services } from "@/lib/placeholder-data";
+import { siteConfig } from "@/lib/site-config";
 import { iconMap } from "@/components/marketing/icon-map";
 
 export const metadata: Metadata = {
@@ -12,8 +14,35 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const servicesJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: "Career Coaching and Reverse Recruiting",
+    provider: {
+      "@type": "ProfessionalService",
+      name: siteConfig.name,
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "United States",
+    },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Career Services",
+      itemListElement: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: service.title,
+          description: service.summary,
+        },
+      })),
+    },
+  };
+
   return (
     <>
+      <JsonLd data={servicesJsonLd} />
       <PageHero
         eyebrow="Services"
         title="Career services built around your goals"
