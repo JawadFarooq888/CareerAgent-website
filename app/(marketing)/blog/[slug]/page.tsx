@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/lib/blog";
 import { JsonLd } from "@/components/marketing/JsonLd";
 import { CTASection } from "@/components/marketing/CTASection";
@@ -60,17 +59,38 @@ export default async function BlogPostPage({
     },
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${siteConfig.url}/blog` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `${siteConfig.url}/blog/${post.slug}`,
+      },
+    ],
+  };
+
   return (
     <>
       <JsonLd data={jsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       <article className="bg-white py-16 sm:py-20">
         <div className="container-page mx-auto max-w-3xl">
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-navy-900/60 hover:text-gold-600"
-          >
-            <ArrowLeft size={16} /> Back to Blog
-          </Link>
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-navy-900/60">
+            <Link href="/" className="hover:text-gold-600">
+              Home
+            </Link>
+            <span aria-hidden="true">/</span>
+            <Link href="/blog" className="hover:text-gold-600">
+              Blog
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-navy-900/40">{post.title}</span>
+          </nav>
 
           <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-gold-600">
             {post.category}
