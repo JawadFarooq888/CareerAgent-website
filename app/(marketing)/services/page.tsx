@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Reverse recruiting, resume writing, LinkedIn optimization, interview coaching, and more — full-service career support to help you get hired faster.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 export default function ServicesPage() {

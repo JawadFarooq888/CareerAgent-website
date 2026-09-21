@@ -7,6 +7,9 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "About Me",
   description: `Meet ${siteConfig.ownerName}, ${siteConfig.ownerTitle.toLowerCase()} at ${siteConfig.name}, helping professionals land their next role faster.`,
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const credentials = [

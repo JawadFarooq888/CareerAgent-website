@@ -6,6 +6,9 @@ import { getAllBlogPosts } from "@/lib/blog";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Practical job search advice: resume tips, LinkedIn optimization, interview preparation, salary negotiation, and more.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogPage() {

@@ -8,6 +8,9 @@ import { faqs } from "@/lib/placeholder-data";
 export const metadata: Metadata = {
   title: "FAQs",
   description: "Answers to common questions about reverse recruiting, pricing, timelines, and how the process works.",
+  alternates: {
+    canonical: "/faqs",
+  },
 };
 
 export default function FaqsPage() {

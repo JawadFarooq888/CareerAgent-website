@@ -5,6 +5,9 @@ import { ConsultationForm } from "@/components/marketing/ConsultationForm";
 export const metadata: Metadata = {
   title: "Book a Free Consultation",
   description: "Schedule your free consultation to discuss your job search goals and find the right service package.",
+  alternates: {
+    canonical: "/book-consultation",
+  },
 };
 
 export default function BookConsultationPage() {

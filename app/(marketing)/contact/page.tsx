@@ -7,6 +7,9 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch to ask a question or discuss how CareerAgent can help with your job search.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {

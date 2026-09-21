@@ -10,6 +10,9 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Success Stories",
   description: "Real results from clients who worked with CareerAgent to land interviews and job offers faster.",
+  alternates: {
+    canonical: "/testimonials",
+  },
 };
 
 export default function TestimonialsPage() {

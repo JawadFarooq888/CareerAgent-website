@@ -10,6 +10,9 @@ import { siteConfig } from "@/lib/site-config";
 export const metadata: Metadata = {
   title: "Pricing",
   description: "Transparent pricing for reverse recruiting, resume writing, and career consulting packages.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 export default function PricingPage() {
