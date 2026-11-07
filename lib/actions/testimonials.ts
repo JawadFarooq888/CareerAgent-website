@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/auth";
 import { testimonialSchema } from "@/lib/validations/testimonial";
 import type { FormActionResult } from "@/lib/actions/blog";
 
@@ -22,6 +23,7 @@ export async function createTestimonial(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -38,6 +40,7 @@ export async function updateTestimonial(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -50,6 +53,7 @@ export async function updateTestimonial(
 }
 
 export async function deleteTestimonial(id: string) {
+  await requireAdmin();
   await prisma.testimonial.delete({ where: { id } });
   revalidatePath("/admin/testimonials");
   revalidatePath("/testimonials");

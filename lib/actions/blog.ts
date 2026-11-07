@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/auth";
 import { blogPostSchema } from "@/lib/validations/blog";
 
 export type FormActionResult = { ok: false; message: string } | null;
@@ -24,6 +25,7 @@ export async function createBlogPost(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -50,6 +52,7 @@ export async function updateBlogPost(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -75,6 +78,7 @@ export async function updateBlogPost(
 }
 
 export async function deleteBlogPost(id: string) {
+  await requireAdmin();
   await prisma.blogPost.delete({ where: { id } });
   revalidatePath("/admin/blog");
   revalidatePath("/blog");

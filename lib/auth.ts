@@ -40,3 +40,13 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     },
   },
 });
+
+// Server Actions are reachable by direct POST, so the /admin proxy check alone
+// does not protect them. Call this first in every admin action.
+export async function requireAdmin() {
+  const session = await auth();
+  if (!session?.user) {
+    throw new Error("Unauthorized");
+  }
+  return session;
+}

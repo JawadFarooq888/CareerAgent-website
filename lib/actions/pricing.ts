@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
+import { requireAdmin } from "@/lib/auth";
 import { pricingPackageSchema } from "@/lib/validations/pricing";
 import type { FormActionResult } from "@/lib/actions/blog";
 
@@ -24,6 +25,7 @@ export async function createPricingPackage(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -40,6 +42,7 @@ export async function updatePricingPackage(
   _prevState: FormActionResult,
   formData: FormData
 ): Promise<FormActionResult> {
+  await requireAdmin();
   const parsed = parseFormData(formData);
   if (!parsed.success) {
     return { ok: false, message: parsed.error.issues[0]?.message ?? "Invalid input." };
@@ -52,6 +55,7 @@ export async function updatePricingPackage(
 }
 
 export async function deletePricingPackage(id: string) {
+  await requireAdmin();
   await prisma.pricingPackage.delete({ where: { id } });
   revalidatePath("/admin/pricing");
   revalidatePath("/pricing");
