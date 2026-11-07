@@ -11,10 +11,10 @@ export function ContactForm() {
 
   if (state?.ok) {
     return (
-      <div className="flex flex-col items-center gap-3 rounded-2xl border border-gold-500/30 bg-gold-500/5 p-10 text-center">
-        <CheckCircle2 size={40} className="text-gold-500" />
-        <p className="text-lg font-semibold text-navy-950">Message sent!</p>
-        <p className="text-sm text-navy-900/70">{state.message}</p>
+      <div className="flex flex-col items-center gap-3 rounded-2xl border border-brand-500/30 bg-brand-500/5 p-10 text-center">
+        <CheckCircle2 size={40} className="text-brand-500" />
+        <p className="text-lg font-semibold text-ink-950">Message sent!</p>
+        <p className="text-sm text-ink-900/70">{state.message}</p>
       </div>
     );
   }
@@ -41,7 +41,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={isPending}
-        className="w-full rounded-full bg-gold-500 px-6 py-3 text-sm font-semibold text-navy-950 transition-colors hover:bg-gold-400 disabled:opacity-50 sm:w-auto"
+        className="w-full rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-700 disabled:opacity-50 sm:w-auto"
       >
         {isPending ? "Sending..." : "Send Message"}
       </button>

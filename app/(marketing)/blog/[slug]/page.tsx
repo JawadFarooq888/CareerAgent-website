@@ -80,25 +80,25 @@ export default async function BlogPostPage({
       <JsonLd data={breadcrumbJsonLd} />
       <article className="bg-white py-16 sm:py-20">
         <div className="container-page mx-auto max-w-3xl">
-          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-navy-900/60">
-            <Link href="/" className="hover:text-gold-600">
+          <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-1.5 text-sm text-ink-900/70">
+            <Link href="/" className="hover:text-brand-600">
               Home
             </Link>
             <span aria-hidden="true">/</span>
-            <Link href="/blog" className="hover:text-gold-600">
+            <Link href="/blog" className="hover:text-brand-600">
               Blog
             </Link>
             <span aria-hidden="true">/</span>
-            <span className="text-navy-900/40">{post.title}</span>
+            <span className="text-ink-900/70">{post.title}</span>
           </nav>
 
-          <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-gold-600">
+          <p className="mt-6 text-sm font-semibold uppercase tracking-widest text-brand-600">
             {post.category}
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-navy-950 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-ink-950 sm:text-4xl">
             {post.title}
           </h1>
-          <time className="mt-3 block text-sm text-navy-900/50" dateTime={post.publishedAt}>
+          <time className="mt-3 block text-sm text-ink-900/70" dateTime={post.publishedAt}>
             {new Date(post.publishedAt).toLocaleDateString("en-US", {
               year: "numeric",
               month: "long",
@@ -106,7 +106,7 @@ export default async function BlogPostPage({
             })}
           </time>
 
-          <div className="prose prose-neutral mt-10 max-w-none prose-headings:text-navy-950 prose-a:text-gold-600">
+          <div className="prose prose-neutral mt-10 max-w-none prose-headings:text-ink-950 prose-a:text-brand-600">
             {post.content.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}

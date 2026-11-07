@@ -29,10 +29,10 @@ export function AdminSidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-screen w-64 shrink-0 flex-col border-r border-white/10 bg-navy-950 text-white">
-      <div className="border-b border-white/10 p-5">
+    <aside className="flex h-screen w-64 shrink-0 flex-col border-r border-black/5 bg-white text-ink-950">
+      <div className="border-b border-black/5 p-5">
         <p className="text-lg font-bold">{siteConfig.name}</p>
-        <p className="text-xs text-white/50">Admin Panel</p>
+        <p className="text-xs text-ink-900/70">Admin Panel</p>
       </div>
 
       <nav className="flex-1 space-y-1 p-3">
@@ -45,7 +45,7 @@ export function AdminSidebar() {
               href={link.href}
               className={cn(
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                active ? "bg-gold-500 text-navy-950" : "text-white/70 hover:bg-white/10"
+                active ? "bg-brand-600 text-white" : "text-ink-900/70 hover:bg-mist-50"
               )}
             >
               <Icon size={18} />
@@ -55,11 +55,11 @@ export function AdminSidebar() {
         })}
       </nav>
 
-      <div className="space-y-1 border-t border-white/10 p-3">
+      <div className="space-y-1 border-t border-black/5 p-3">
         <Link
           href="/"
           target="_blank"
-          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-white/70 hover:bg-white/10"
+          className="flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-ink-900/70 hover:bg-mist-50"
         >
           <ExternalLink size={18} />
           View Site
@@ -67,7 +67,7 @@ export function AdminSidebar() {
         <form action={logoutAction}>
           <button
             type="submit"
-            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-white/70 hover:bg-white/10"
+            className="flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-ink-900/70 hover:bg-mist-50"
           >
             <LogOut size={18} />
             Sign Out

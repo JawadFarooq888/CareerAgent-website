@@ -73,12 +73,12 @@ function StatCard({
     <div
       className={
         highlight
-          ? "rounded-2xl border border-gold-500/30 bg-gold-500/10 p-6"
+          ? "rounded-2xl border border-brand-500/30 bg-brand-500/10 p-6"
           : "rounded-2xl border border-black/5 bg-white p-6"
       }
     >
-      <p className="text-3xl font-bold text-navy-950">{value}</p>
-      <p className="mt-1 text-sm text-navy-900/60">{label}</p>
+      <p className="text-3xl font-bold text-ink-950">{value}</p>
+      <p className="mt-1 text-sm text-ink-900/70">{label}</p>
     </div>
   );
 }

@@ -8,7 +8,7 @@ export function BlogPreview() {
   const posts = getAllBlogPosts().slice(0, 3);
 
   return (
-    <section className="bg-navy-950/[0.02] py-20 sm:py-28">
+    <section className="bg-white py-20 sm:py-28">
       <div className="container-page">
         <SectionHeading
           eyebrow="From the Blog"
@@ -25,7 +25,7 @@ export function BlogPreview() {
         <div className="mt-12 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700"
           >
             Read more articles <ArrowRight size={16} />
           </Link>

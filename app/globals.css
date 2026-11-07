@@ -3,19 +3,27 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #101623;
+  --foreground: #12263a;
 
-  --color-navy-950: #070d1a;
-  --color-navy-900: #0b1526;
-  --color-navy-800: #101f38;
-  --color-navy-700: #172c4d;
-  --color-navy-600: #1f3a63;
-  --color-navy-500: #2a4c80;
+  /* Ink: text and borders. */
+  --color-ink-950: #12263a;
+  --color-ink-900: #1c3347;
+  --color-ink-800: #2b4459;
+  --color-ink-700: #3d576c;
+  --color-ink-600: #527085;
+  --color-ink-500: #6b8799;
 
-  --color-gold-600: #a8841c;
-  --color-gold-500: #c9a227;
-  --color-gold-400: #d9b94a;
-  --color-gold-300: #e8d387;
+  /* Brand teal. 600 and darker are safe for text on white (WCAG AA). */
+  --color-brand-700: #115e59;
+  --color-brand-600: #0f766e;
+  --color-brand-500: #14a093;
+  --color-brand-400: #5eead4;
+  --color-brand-300: #99f6e4;
+  --color-brand-200: #ccfbf1;
+
+  /* Mist: soft tinted page surfaces. */
+  --color-mist-100: #e3f4f1;
+  --color-mist-50: #f2faf8;
 }
 
 @theme inline {
@@ -24,17 +32,22 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  --color-navy-950: var(--color-navy-950);
-  --color-navy-900: var(--color-navy-900);
-  --color-navy-800: var(--color-navy-800);
-  --color-navy-700: var(--color-navy-700);
-  --color-navy-600: var(--color-navy-600);
-  --color-navy-500: var(--color-navy-500);
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-700: var(--color-ink-700);
+  --color-ink-600: var(--color-ink-600);
+  --color-ink-500: var(--color-ink-500);
 
-  --color-gold-600: var(--color-gold-600);
-  --color-gold-500: var(--color-gold-500);
-  --color-gold-400: var(--color-gold-400);
-  --color-gold-300: var(--color-gold-300);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-200: var(--color-brand-200);
+
+  --color-mist-100: var(--color-mist-100);
+  --color-mist-50: var(--color-mist-50);
 }
 
 body {
@@ -55,4 +68,25 @@ body {
     padding-left: 2rem;
     padding-right: 2rem;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background: rgba(20, 160, 147, 0.25);
+  color: var(--color-ink-950);
+}
+
+/* Subtle dotted grid used behind hero sections. */
+.bg-dot-grid {
+  background-image: radial-gradient(circle, rgba(15, 118, 110, 0.35) 1px, transparent 1px);
+  background-size: 28px 28px;
 }

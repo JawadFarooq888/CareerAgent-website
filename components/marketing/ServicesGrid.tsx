@@ -25,14 +25,14 @@ export function ServicesGrid({ limit }: { limit?: number }) {
                 href={`/services#${service.slug}`}
                 className="group flex flex-col rounded-2xl border border-black/5 bg-white p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
-                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-navy-950 text-gold-400 transition-colors group-hover:bg-gold-500 group-hover:text-navy-950">
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-mist-100 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
                   <Icon size={22} />
                 </div>
-                <h3 className="text-lg font-semibold text-navy-950">{service.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-900/70">
+                <h3 className="text-lg font-semibold text-ink-950">{service.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-900/70">
                   {service.summary}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-gold-600">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600">
                   Learn more{" "}
                   <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                 </span>
@@ -45,7 +45,7 @@ export function ServicesGrid({ limit }: { limit?: number }) {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700"
             >
               View all services <ArrowRight size={16} />
             </Link>

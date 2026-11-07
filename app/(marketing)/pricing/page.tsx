@@ -63,9 +63,9 @@ export default function PricingPage() {
       </FadeIn>
 
       <FadeIn>
-        <section className="bg-navy-950/[0.02] py-20 sm:py-28">
+        <section className="bg-mist-50 py-20 sm:py-28">
           <div className="container-page mx-auto max-w-3xl">
-            <h2 className="text-center text-2xl font-bold text-navy-950 sm:text-3xl">
+            <h2 className="text-center text-2xl font-bold text-ink-950 sm:text-3xl">
               Pricing Questions
             </h2>
             <div className="mt-10">

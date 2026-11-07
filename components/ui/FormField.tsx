@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 const inputClasses =
-  "w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm text-navy-900 outline-none placeholder:text-navy-900/40 focus:border-gold-500 focus:ring-2 focus:ring-gold-400/40";
+  "w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm text-ink-900 outline-none placeholder:text-ink-900/40 focus:border-brand-500 focus:ring-2 focus:ring-brand-400/40";
 
 export function TextField({
   label,
@@ -22,8 +22,8 @@ export function TextField({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-navy-900">
-        {label} {required && <span className="text-gold-600">*</span>}
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink-900">
+        {label} {required && <span className="text-brand-600">*</span>}
       </label>
       <input
         id={name}
@@ -57,8 +57,8 @@ export function TextAreaField({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-navy-900">
-        {label} {required && <span className="text-gold-600">*</span>}
+      <label htmlFor={name} className="mb-1.5 block text-sm font-medium text-ink-900">
+        {label} {required && <span className="text-brand-600">*</span>}
       </label>
       <textarea
         id={name}

@@ -26,10 +26,10 @@ export default async function AdminContentPage() {
         <>
           <div className="mb-6 overflow-hidden rounded-2xl border border-black/5 bg-white">
             {blocks.length === 0 ? (
-              <p className="p-6 text-sm text-navy-900/60">No content overrides yet.</p>
+              <p className="p-6 text-sm text-ink-900/70">No content overrides yet.</p>
             ) : (
               <table className="w-full text-left text-sm">
-                <thead className="border-b border-black/5 bg-navy-950/[0.02] text-xs uppercase tracking-wide text-navy-900/50">
+                <thead className="border-b border-black/5 bg-mist-50 text-xs uppercase tracking-wide text-ink-900/70">
                   <tr>
                     <th className="px-5 py-3">Key</th>
                     <th className="px-5 py-3">Value</th>
@@ -39,8 +39,8 @@ export default async function AdminContentPage() {
                 <tbody className="divide-y divide-black/5">
                   {blocks.map((block) => (
                     <tr key={block.id}>
-                      <td className="px-5 py-3.5 font-mono text-xs text-navy-950">{block.key}</td>
-                      <td className="px-5 py-3.5 text-navy-900/70">{block.value}</td>
+                      <td className="px-5 py-3.5 font-mono text-xs text-ink-950">{block.key}</td>
+                      <td className="px-5 py-3.5 text-ink-900/70">{block.value}</td>
                       <td className="px-5 py-3.5">
                         <form
                           action={async () => {
@@ -49,7 +49,7 @@ export default async function AdminContentPage() {
                           }}
                           className="flex justify-end"
                         >
-                          <button type="submit" className="text-navy-900/50 hover:text-red-600" aria-label="Delete">
+                          <button type="submit" className="text-ink-900/70 hover:text-red-600" aria-label="Delete">
                             <Trash2 size={16} />
                           </button>
                         </form>
@@ -62,28 +62,28 @@ export default async function AdminContentPage() {
           </div>
 
           <form action={upsertContentBlock} className="max-w-lg space-y-4 rounded-2xl border border-black/5 bg-white p-6">
-            <h3 className="text-sm font-semibold text-navy-950">Add / Update Content Block</h3>
+            <h3 className="text-sm font-semibold text-ink-950">Add / Update Content Block</h3>
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-navy-900">Key</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink-900">Key</label>
               <input
                 name="key"
                 required
                 placeholder="home.hero.heading"
-                className="w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-400/40"
+                className="w-full rounded-lg border border-black/10 px-4 py-2.5 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-400/40"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-navy-900">Value</label>
+              <label className="mb-1.5 block text-sm font-medium text-ink-900">Value</label>
               <textarea
                 name="value"
                 required
                 rows={3}
-                className="w-full resize-none rounded-lg border border-black/10 px-4 py-2.5 text-sm outline-none focus:border-gold-500 focus:ring-2 focus:ring-gold-400/40"
+                className="w-full resize-none rounded-lg border border-black/10 px-4 py-2.5 text-sm outline-none focus:border-brand-500 focus:ring-2 focus:ring-brand-400/40"
               />
             </div>
             <button
               type="submit"
-              className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-400"
+              className="rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-700"
             >
               Save
             </button>

@@ -19,11 +19,18 @@ export const siteConfig = {
 } as const;
 
 export const navLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Me" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/testimonials", label: "Success Stories" },
+  { href: "/about", label: "About" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+] as const;
+
+export const companyLinks = [
+  { href: "/about", label: "About Me" },
+  { href: "/testimonials", label: "Success Stories" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
   { href: "/faqs", label: "FAQs" },
   { href: "/contact", label: "Contact" },

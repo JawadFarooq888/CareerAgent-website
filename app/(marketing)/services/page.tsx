@@ -63,12 +63,12 @@ export default function ServicesPage() {
                   id={service.slug}
                   className="group flex scroll-mt-24 gap-5 rounded-2xl border border-black/5 p-7 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-navy-950 text-gold-400 transition-colors group-hover:bg-gold-500 group-hover:text-navy-950">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-mist-100 text-brand-600 transition-colors group-hover:bg-brand-600 group-hover:text-white">
                     <Icon size={22} />
                   </div>
                   <div>
-                    <h2 className="text-lg font-semibold text-navy-950">{service.title}</h2>
-                    <p className="mt-2 text-sm leading-relaxed text-navy-900/70">
+                    <h2 className="text-lg font-semibold text-ink-950">{service.title}</h2>
+                    <p className="mt-2 text-sm leading-relaxed text-ink-900/70">
                       {service.summary}
                     </p>
                   </div>

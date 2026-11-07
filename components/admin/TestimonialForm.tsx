@@ -38,7 +38,7 @@ export function TestimonialForm({
       <TextAreaField label="Quote" name="quote" required rows={4} defaultValue={initial?.quote} />
       <TextField label="Photo URL (optional)" name="photoUrl" defaultValue={initial?.photoUrl ?? ""} />
 
-      <label className="flex items-center gap-2 text-sm font-medium text-navy-900">
+      <label className="flex items-center gap-2 text-sm font-medium text-ink-900">
         <input
           type="checkbox"
           name="published"
@@ -53,7 +53,7 @@ export function TestimonialForm({
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-400 disabled:opacity-50"
+        className="rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-50"
       >
         {isPending ? "Saving..." : submitLabel}
       </button>

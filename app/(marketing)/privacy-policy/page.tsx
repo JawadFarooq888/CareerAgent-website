@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
       <PageHero title="Privacy Policy" description={`Last updated: ${lastUpdated}`} />
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="container-page prose prose-neutral mx-auto max-w-3xl prose-headings:text-navy-950 prose-a:text-gold-600">
+        <div className="container-page prose prose-neutral mx-auto max-w-3xl prose-headings:text-ink-950 prose-a:text-brand-600">
           <p>
             [Placeholder content — replace with your reviewed privacy policy before launch.]
             {siteConfig.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;) respects your privacy. This

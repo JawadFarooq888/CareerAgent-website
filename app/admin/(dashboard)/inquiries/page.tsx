@@ -20,11 +20,11 @@ export default async function AdminInquiriesPage() {
       {dbError ? (
         <p className="text-sm text-amber-700">Database not connected.</p>
       ) : inquiries.length === 0 ? (
-        <p className="text-sm text-navy-900/60">No inquiries yet.</p>
+        <p className="text-sm text-ink-900/70">No inquiries yet.</p>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-black/5 bg-white">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-black/5 bg-navy-950/[0.02] text-xs uppercase tracking-wide text-navy-900/50">
+            <thead className="border-b border-black/5 bg-mist-50 text-xs uppercase tracking-wide text-ink-900/70">
               <tr>
                 <th className="px-5 py-3">Name</th>
                 <th className="px-5 py-3">Type</th>
@@ -34,21 +34,21 @@ export default async function AdminInquiriesPage() {
             </thead>
             <tbody className="divide-y divide-black/5">
               {inquiries.map((inquiry) => (
-                <tr key={inquiry.id} className="hover:bg-navy-950/[0.02]">
+                <tr key={inquiry.id} className="hover:bg-mist-50">
                   <td className="px-5 py-3.5">
                     <Link
                       href={`/admin/inquiries/${inquiry.id}`}
-                      className="font-medium text-navy-950 hover:text-gold-600"
+                      className="font-medium text-ink-950 hover:text-brand-600"
                     >
                       {inquiry.name}
                     </Link>
-                    <p className="text-xs text-navy-900/50">{inquiry.email}</p>
+                    <p className="text-xs text-ink-900/70">{inquiry.email}</p>
                   </td>
-                  <td className="px-5 py-3.5 text-navy-900/70">{inquiry.type}</td>
+                  <td className="px-5 py-3.5 text-ink-900/70">{inquiry.type}</td>
                   <td className="px-5 py-3.5">
                     <StatusBadge status={inquiry.status} />
                   </td>
-                  <td className="px-5 py-3.5 text-navy-900/50">
+                  <td className="px-5 py-3.5 text-ink-900/70">
                     {inquiry.createdAt.toLocaleDateString()}
                   </td>
                 </tr>

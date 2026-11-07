@@ -1,50 +1,16 @@
-"use client";
-
-import { useState } from "react";
-import { MessageCircle, Phone, X } from "lucide-react";
+import { Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 
 export function FloatingActions() {
-  const [chatOpen, setChatOpen] = useState(false);
-
   return (
     <div className="fixed bottom-24 right-4 z-50 flex flex-col items-end gap-3 lg:bottom-5 lg:right-5">
-      {chatOpen && (
-        <div className="mb-1 w-64 max-w-[calc(100vw-2rem)] rounded-2xl border border-black/10 bg-white p-4 shadow-xl sm:w-72">
-          <div className="mb-2 flex items-center justify-between">
-            <p className="text-sm font-semibold text-navy-900">Chat with us</p>
-            <button
-              type="button"
-              onClick={() => setChatOpen(false)}
-              aria-label="Close chat"
-              className="text-navy-900/50 hover:text-navy-900"
-            >
-              <X size={16} />
-            </button>
-          </div>
-          <p className="text-sm text-navy-900/70">
-            Live chat is coming soon. In the meantime, message us on WhatsApp or book a free
-            consultation and we&apos;ll respond within one business day.
-          </p>
-        </div>
-      )}
-
       <a
-        href={`tel:${siteConfig.phone}`}
+        href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
         aria-label="Call now"
-        className="hidden h-14 w-14 items-center justify-center rounded-full bg-navy-900 p-3.5 text-white shadow-lg transition-transform hover:scale-105 lg:flex"
+        className="hidden h-14 w-14 items-center justify-center rounded-full bg-brand-600 p-3.5 text-white shadow-lg transition-transform hover:scale-105 lg:flex"
       >
         <Phone size={22} />
       </a>
-
-      <button
-        type="button"
-        onClick={() => setChatOpen((v) => !v)}
-        aria-label="Open chat"
-        className="hidden h-14 w-14 items-center justify-center rounded-full bg-gold-500 p-3.5 text-navy-950 shadow-lg transition-transform hover:scale-105 lg:flex"
-      >
-        <MessageCircle size={22} />
-      </button>
 
       <a
         href={`https://wa.me/${siteConfig.whatsappNumber}`}

@@ -7,7 +7,7 @@ export function StarRating({ rating }: { rating: number }) {
         <Star
           key={i}
           size={16}
-          className={i < rating ? "fill-gold-500 text-gold-500" : "text-black/10"}
+          className={i < rating ? "fill-brand-500 text-brand-500" : "text-black/10"}
         />
       ))}
     </div>

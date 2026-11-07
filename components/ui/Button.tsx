@@ -6,12 +6,12 @@ export type ButtonSize = "sm" | "md" | "lg";
 
 export const buttonVariantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-gold-500 text-navy-950 shadow-sm hover:bg-gold-400 hover:shadow-md hover:shadow-gold-500/20 focus-visible:outline-gold-500",
+    "bg-brand-600 text-white shadow-sm hover:bg-brand-700 hover:shadow-md hover:shadow-brand-600/20 focus-visible:outline-brand-600",
   secondary:
-    "bg-navy-900 text-white shadow-sm hover:bg-navy-800 hover:shadow-md focus-visible:outline-navy-900",
+    "bg-mist-100 text-brand-700 hover:bg-brand-200 focus-visible:outline-brand-600",
   outline:
-    "border border-navy-900 text-navy-900 hover:bg-navy-900 hover:text-white focus-visible:outline-navy-900",
-  ghost: "text-navy-900 hover:bg-navy-900/5",
+    "border border-brand-600 bg-white text-brand-700 hover:bg-mist-100 focus-visible:outline-brand-600",
+  ghost: "text-ink-900 hover:bg-mist-100",
 };
 
 export const buttonSizeClasses: Record<ButtonSize, string> = {

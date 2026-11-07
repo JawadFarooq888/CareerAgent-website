@@ -22,7 +22,7 @@ export default async function AdminTestimonialsPage() {
         action={
           <Link
             href="/admin/testimonials/new"
-            className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-5 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-400"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700"
           >
             <Plus size={16} /> New Testimonial
           </Link>
@@ -32,11 +32,11 @@ export default async function AdminTestimonialsPage() {
       {dbError ? (
         <p className="text-sm text-amber-700">Database not connected.</p>
       ) : testimonials.length === 0 ? (
-        <p className="text-sm text-navy-900/60">No testimonials yet.</p>
+        <p className="text-sm text-ink-900/70">No testimonials yet.</p>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-black/5 bg-white">
           <table className="w-full text-left text-sm">
-            <thead className="border-b border-black/5 bg-navy-950/[0.02] text-xs uppercase tracking-wide text-navy-900/50">
+            <thead className="border-b border-black/5 bg-mist-50 text-xs uppercase tracking-wide text-ink-900/70">
               <tr>
                 <th className="px-5 py-3">Name</th>
                 <th className="px-5 py-3">Rating</th>
@@ -46,12 +46,12 @@ export default async function AdminTestimonialsPage() {
             </thead>
             <tbody className="divide-y divide-black/5">
               {testimonials.map((t) => (
-                <tr key={t.id} className="hover:bg-navy-950/[0.02]">
+                <tr key={t.id} className="hover:bg-mist-50">
                   <td className="px-5 py-3.5">
-                    <p className="font-medium text-navy-950">{t.name}</p>
-                    <p className="text-xs text-navy-900/50">{t.role} {t.company && `· ${t.company}`}</p>
+                    <p className="font-medium text-ink-950">{t.name}</p>
+                    <p className="text-xs text-ink-900/70">{t.role} {t.company && `· ${t.company}`}</p>
                   </td>
-                  <td className="px-5 py-3.5 text-navy-900/70">{t.rating} / 5</td>
+                  <td className="px-5 py-3.5 text-ink-900/70">{t.rating} / 5</td>
                   <td className="px-5 py-3.5">
                     <span
                       className={
@@ -67,7 +67,7 @@ export default async function AdminTestimonialsPage() {
                     <div className="flex justify-end gap-3">
                       <Link
                         href={`/admin/testimonials/${t.id}/edit`}
-                        className="text-navy-900/50 hover:text-gold-600"
+                        className="text-ink-900/70 hover:text-brand-600"
                         aria-label="Edit"
                       >
                         <Pencil size={16} />
@@ -78,7 +78,7 @@ export default async function AdminTestimonialsPage() {
                           await deleteTestimonial(t.id);
                         }}
                       >
-                        <button type="submit" className="text-navy-900/50 hover:text-red-600" aria-label="Delete">
+                        <button type="submit" className="text-ink-900/70 hover:text-red-600" aria-label="Delete">
                           <Trash2 size={16} />
                         </button>
                       </form>

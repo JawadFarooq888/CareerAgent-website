@@ -24,7 +24,7 @@ export function OwnerAvatar({
       style={{
         width: size,
         height: size,
-        background: "linear-gradient(135deg, #c9a227 0%, #172c4d 100%)",
+        background: "linear-gradient(135deg, #14a093 0%, #115e59 100%)",
       }}
     >
       <div

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/lib/site-config";
@@ -40,6 +40,10 @@ export const metadata: Metadata = {
     : undefined,
 };
 
+export const viewport: Viewport = {
+  themeColor: "#e3f4f1",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -51,6 +55,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-brand-600 focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-white"
+        >
+          Skip to content
+        </a>
         {children}
         <Analytics />
       </body>

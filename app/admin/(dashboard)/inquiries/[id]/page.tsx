@@ -26,7 +26,7 @@ export default async function AdminInquiryDetailPage({
     <>
       <Link
         href="/admin/inquiries"
-        className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-navy-900/60 hover:text-gold-600"
+        className="mb-4 inline-flex items-center gap-1.5 text-sm font-medium text-ink-900/70 hover:text-brand-600"
       >
         <ArrowLeft size={16} /> Back to Inquiries
       </Link>
@@ -39,29 +39,29 @@ export default async function AdminInquiryDetailPage({
       <div className="grid gap-6 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-4 rounded-2xl border border-black/5 bg-white p-6">
           <div>
-            <p className="text-xs font-semibold uppercase text-navy-900/40">Email</p>
-            <p className="text-sm text-navy-950">{inquiry.email}</p>
+            <p className="text-xs font-semibold uppercase text-ink-900/70">Email</p>
+            <p className="text-sm text-ink-950">{inquiry.email}</p>
           </div>
           {inquiry.phone && (
             <div>
-              <p className="text-xs font-semibold uppercase text-navy-900/40">Phone</p>
-              <p className="text-sm text-navy-950">{inquiry.phone}</p>
+              <p className="text-xs font-semibold uppercase text-ink-900/70">Phone</p>
+              <p className="text-sm text-ink-950">{inquiry.phone}</p>
             </div>
           )}
           {inquiry.subject && (
             <div>
-              <p className="text-xs font-semibold uppercase text-navy-900/40">Subject</p>
-              <p className="text-sm text-navy-950">{inquiry.subject}</p>
+              <p className="text-xs font-semibold uppercase text-ink-900/70">Subject</p>
+              <p className="text-sm text-ink-950">{inquiry.subject}</p>
             </div>
           )}
           <div>
-            <p className="text-xs font-semibold uppercase text-navy-900/40">Message</p>
-            <p className="whitespace-pre-wrap text-sm text-navy-900/80">{inquiry.message}</p>
+            <p className="text-xs font-semibold uppercase text-ink-900/70">Message</p>
+            <p className="whitespace-pre-wrap text-sm text-ink-900/80">{inquiry.message}</p>
           </div>
         </div>
 
         <div className="space-y-4 rounded-2xl border border-black/5 bg-white p-6">
-          <p className="text-xs font-semibold uppercase text-navy-900/40">Current Status</p>
+          <p className="text-xs font-semibold uppercase text-ink-900/70">Current Status</p>
           <StatusBadge status={inquiry.status} />
 
           <form action={setStatus} className="space-y-3 pt-2">
@@ -78,7 +78,7 @@ export default async function AdminInquiryDetailPage({
             </select>
             <button
               type="submit"
-              className="w-full rounded-full bg-navy-950 px-4 py-2 text-sm font-semibold text-white hover:bg-navy-800"
+              className="w-full rounded-full bg-brand-600 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-700"
             >
               Update Status
             </button>

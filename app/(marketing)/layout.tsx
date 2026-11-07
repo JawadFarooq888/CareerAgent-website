@@ -31,7 +31,7 @@ export default function MarketingLayout({ children }: { children: React.ReactNod
     <>
       <JsonLd data={organizationJsonLd} />
       <Navbar />
-      <main className="flex-1">{children}</main>
+      <main id="main" className="flex-1">{children}</main>
       <Footer />
       <FloatingActions />
       <StickyMobileCTA />

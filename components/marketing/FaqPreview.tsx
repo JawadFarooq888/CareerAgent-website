@@ -6,7 +6,7 @@ import { FaqAccordion } from "@/components/marketing/FaqAccordion";
 
 export function FaqPreview() {
   return (
-    <section className="bg-white py-20 sm:py-28">
+    <section className="bg-mist-50 py-20 sm:py-28">
       <div className="container-page mx-auto max-w-3xl">
         <SectionHeading
           eyebrow="Common Questions"
@@ -20,7 +20,7 @@ export function FaqPreview() {
         <div className="mt-8 text-center">
           <Link
             href="/faqs"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-gold-600 hover:text-gold-500"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-brand-600 hover:text-brand-700"
           >
             See all FAQs <ArrowRight size={16} />
           </Link>

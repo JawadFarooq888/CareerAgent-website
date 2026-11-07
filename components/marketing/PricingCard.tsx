@@ -30,27 +30,27 @@ export function PricingCard({
       className={cn(
         "flex flex-col rounded-2xl border p-8 transition-transform duration-200 hover:-translate-y-1",
         highlighted
-          ? "border-gold-500 bg-navy-950 text-white shadow-xl lg:scale-105"
-          : "border-black/5 bg-white text-navy-950 hover:shadow-lg"
+          ? "border-2 border-brand-600 bg-mist-50 text-ink-950 shadow-xl shadow-brand-700/10 lg:scale-105"
+          : "border-black/5 bg-white text-ink-950 hover:shadow-lg"
       )}
     >
       {highlighted && (
-        <span className="mb-4 inline-flex w-fit rounded-full bg-gold-500 px-3 py-1 text-xs font-semibold text-navy-950">
+        <span className="mb-4 inline-flex w-fit rounded-full bg-brand-600 px-3 py-1 text-xs font-semibold text-white">
           Most Popular
         </span>
       )}
-      <h3 className={cn("text-lg font-semibold", highlighted ? "text-white" : "text-navy-950")}>
+      <h3 className="text-lg font-semibold text-ink-950">
         {name}
       </h3>
       {description && (
-        <p className={cn("mt-1 text-sm", highlighted ? "text-white/60" : "text-navy-900/60")}>
+        <p className="mt-1 text-sm text-ink-900/70">
           {description}
         </p>
       )}
       <div className="mt-5 flex items-baseline gap-2">
         <span className="text-4xl font-bold">{price}</span>
         {billingNote && (
-          <span className={cn("text-sm", highlighted ? "text-white/50" : "text-navy-900/50")}>
+          <span className="text-sm text-ink-900/70">
             {billingNote}
           </span>
         )}
@@ -59,8 +59,8 @@ export function PricingCard({
       <ul className="mt-6 flex-1 space-y-3">
         {features.map((feature) => (
           <li key={feature} className="flex items-start gap-2.5 text-sm">
-            <Check size={18} className="mt-0.5 shrink-0 text-gold-500" />
-            <span className={highlighted ? "text-white/80" : "text-navy-900/80"}>{feature}</span>
+            <Check size={18} className="mt-0.5 shrink-0 text-brand-500" />
+            <span className="text-ink-900/80">{feature}</span>
           </li>
         ))}
       </ul>
@@ -69,7 +69,7 @@ export function PricingCard({
         <PaddleCheckoutButton
           priceId={paddlePriceId!}
           variant={highlighted ? "primary" : "outline"}
-          className={cn("mt-8 w-full", !highlighted && "border-navy-950")}
+          className="mt-8 w-full"
         >
           Buy Now
         </PaddleCheckoutButton>
@@ -77,7 +77,7 @@ export function PricingCard({
         <Button
           href="/book-consultation"
           variant={highlighted ? "primary" : "outline"}
-          className={cn("mt-8 w-full", !highlighted && "border-navy-950")}
+          className="mt-8 w-full"
         >
           {ctaText}
         </Button>

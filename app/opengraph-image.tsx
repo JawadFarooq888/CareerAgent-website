@@ -15,7 +15,7 @@ export default function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "linear-gradient(135deg, #070d1a 0%, #172c4d 100%)",
+          background: "linear-gradient(135deg, #e3f4f1 0%, #ffffff 100%)",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -32,18 +32,18 @@ export default function OpengraphImage() {
               width: 48,
               height: 48,
               borderRadius: 10,
-              background: "#c9a227",
+              background: "#0f766e",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               fontSize: 26,
               fontWeight: 700,
-              color: "#070d1a",
+              color: "#ffffff",
             }}
           >
             C
           </div>
-          <div style={{ fontSize: 30, fontWeight: 700, color: "#ffffff" }}>
+          <div style={{ fontSize: 30, fontWeight: 700, color: "#12263a" }}>
             {siteConfig.name}
           </div>
         </div>
@@ -51,7 +51,7 @@ export default function OpengraphImage() {
           style={{
             fontSize: 56,
             fontWeight: 700,
-            color: "#ffffff",
+            color: "#12263a",
             lineHeight: 1.15,
             maxWidth: 900,
           }}
@@ -62,7 +62,7 @@ export default function OpengraphImage() {
           style={{
             marginTop: 28,
             fontSize: 26,
-            color: "#d9b94a",
+            color: "#0f766e",
           }}
         >
           {siteConfig.tagline}

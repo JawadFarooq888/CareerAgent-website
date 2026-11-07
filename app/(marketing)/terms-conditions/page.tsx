@@ -18,7 +18,7 @@ export default function TermsConditionsPage() {
       <PageHero title="Terms & Conditions" description={`Last updated: ${lastUpdated}`} />
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="container-page prose prose-neutral mx-auto max-w-3xl prose-headings:text-navy-950 prose-a:text-gold-600">
+        <div className="container-page prose prose-neutral mx-auto max-w-3xl prose-headings:text-ink-950 prose-a:text-brand-600">
           <p>
             [Placeholder content — replace with terms reviewed by a legal professional before
             launch.] These Terms & Conditions govern your use of the {siteConfig.name} website and

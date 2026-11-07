@@ -32,10 +32,10 @@ export default function AboutPage() {
       <section className="bg-white py-20 sm:py-28">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 className="text-2xl font-bold text-navy-950 sm:text-3xl">
+            <h2 className="text-2xl font-bold text-ink-950 sm:text-3xl">
               I spent a decade on the other side of the hiring table.
             </h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-navy-900/70">
+            <div className="mt-5 space-y-4 text-base leading-relaxed text-ink-900/70">
               <p>
                 After years working as a corporate recruiter, I saw the same pattern over and
                 over: talented, qualified candidates were getting passed over — not because they
@@ -56,12 +56,12 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-black/5 bg-navy-950/[0.02] p-8">
-            <h3 className="text-lg font-semibold text-navy-950">Credentials & Experience</h3>
+          <div className="rounded-2xl border border-black/5 bg-mist-50 p-8">
+            <h3 className="text-lg font-semibold text-ink-950">Credentials & Experience</h3>
             <ul className="mt-5 space-y-3">
               {credentials.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm text-navy-900/80">
-                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-gold-500" />
+                <li key={item} className="flex items-start gap-3 text-sm text-ink-900/80">
+                  <CheckCircle2 size={18} className="mt-0.5 shrink-0 text-brand-500" />
                   {item}
                 </li>
               ))}

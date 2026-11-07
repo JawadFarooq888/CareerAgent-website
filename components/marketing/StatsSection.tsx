@@ -19,8 +19,8 @@ export function StatsSection() {
               index !== 0 && "sm:border-l sm:border-black/5"
             )}
           >
-            <p className="text-3xl font-bold text-navy-950 sm:text-4xl">{stat.value}</p>
-            <p className="mt-1.5 text-sm text-navy-900/60">{stat.label}</p>
+            <p className="text-3xl font-bold text-ink-950 sm:text-4xl">{stat.value}</p>
+            <p className="mt-1.5 text-sm text-ink-900/70">{stat.label}</p>
           </div>
         ))}
       </div>

@@ -48,11 +48,11 @@ export function PricingForm({
       <TextField label="Sort Order" name="order" type="number" defaultValue={String(initial?.order ?? 0)} />
 
       <div className="flex gap-6">
-        <label className="flex items-center gap-2 text-sm font-medium text-navy-900">
+        <label className="flex items-center gap-2 text-sm font-medium text-ink-900">
           <input type="checkbox" name="highlighted" defaultChecked={initial?.highlighted ?? false} className="h-4 w-4 rounded border-black/20" />
           Highlighted (Most Popular)
         </label>
-        <label className="flex items-center gap-2 text-sm font-medium text-navy-900">
+        <label className="flex items-center gap-2 text-sm font-medium text-ink-900">
           <input type="checkbox" name="published" defaultChecked={initial?.published ?? true} className="h-4 w-4 rounded border-black/20" />
           Published
         </label>
@@ -63,7 +63,7 @@ export function PricingForm({
       <button
         type="submit"
         disabled={isPending}
-        className="rounded-full bg-gold-500 px-6 py-2.5 text-sm font-semibold text-navy-950 hover:bg-gold-400 disabled:opacity-50"
+        className="rounded-full bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 disabled:opacity-50"
       >
         {isPending ? "Saving..." : submitLabel}
       </button>
