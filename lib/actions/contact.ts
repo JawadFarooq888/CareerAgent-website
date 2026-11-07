@@ -3,6 +3,7 @@
 import { prisma } from "@/lib/prisma";
 import { contactSchema, consultationSchema, MIN_FILL_TIME_MS } from "@/lib/validations/contact";
 import { sendLeadNotification } from "@/lib/email";
+import { escapeHtml } from "@/lib/utils";
 import type { ActionResult } from "@/lib/actions/newsletter";
 
 function isLikelyBot(honeypot: string | undefined, startedAt: string | undefined): boolean {
@@ -50,7 +51,7 @@ export async function submitContactForm(
 
     await sendLeadNotification({
       subject: `New contact inquiry from ${parsed.data.name}`,
-      html: `<p><strong>${parsed.data.name}</strong> (${parsed.data.email}) sent:</p><p>${parsed.data.message}</p>`,
+      html: `<p><strong>${escapeHtml(parsed.data.name)}</strong> (${escapeHtml(parsed.data.email)}) sent:</p><p>${escapeHtml(parsed.data.message)}</p>`,
     });
 
     return { ok: true, message: "Thanks for reaching out! I'll get back to you within one business day." };
@@ -97,7 +98,7 @@ export async function submitConsultationRequest(
 
     await sendLeadNotification({
       subject: `New consultation request from ${parsed.data.name}`,
-      html: `<p><strong>${parsed.data.name}</strong> (${parsed.data.email}) requested a consultation:</p><p>${parsed.data.message}</p>`,
+      html: `<p><strong>${escapeHtml(parsed.data.name)}</strong> (${escapeHtml(parsed.data.email)}) requested a consultation:</p><p>${escapeHtml(parsed.data.message)}</p>`,
     });
 
     return { ok: true, message: "Thanks! I'll reach out shortly to schedule your consultation." };
