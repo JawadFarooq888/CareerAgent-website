@@ -1,18 +1,23 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { contactSchema, consultationSchema, MIN_FILL_TIME_MS } from "@/lib/validations/contact";
+import {
+  contactSchema,
+  consultationSchema,
+  MAX_FORM_AGE_MS,
+  MIN_FILL_TIME_MS,
+} from "@/lib/validations/contact";
 import { sendLeadNotification } from "@/lib/email";
 import { escapeHtml } from "@/lib/utils";
 import type { ActionResult } from "@/lib/actions/newsletter";
 
 function isLikelyBot(honeypot: string | undefined, startedAt: string | undefined): boolean {
   if (honeypot) return true;
-  if (startedAt) {
-    const elapsed = Date.now() - Number(startedAt);
-    if (Number.isFinite(elapsed) && elapsed < MIN_FILL_TIME_MS) return true;
-  }
-  return false;
+  // The real form always sends a recent start time; missing, forged (e.g. "0")
+  // or replayed values mean the request did not come from the page.
+  const elapsed = Date.now() - Number(startedAt);
+  if (!startedAt || !Number.isFinite(elapsed)) return true;
+  return elapsed < MIN_FILL_TIME_MS || elapsed > MAX_FORM_AGE_MS;
 }
 
 export async function submitContactForm(

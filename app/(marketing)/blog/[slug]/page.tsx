@@ -6,6 +6,10 @@ import { JsonLd } from "@/components/marketing/JsonLd";
 import { CTASection } from "@/components/marketing/CTASection";
 import { siteConfig } from "@/lib/site-config";
 
+// Only the known posts exist. Without this, every random /blog/<anything>
+// request is rendered and written to the page cache, so junk URLs can fill it.
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return getAllBlogPosts().map((post) => ({ slug: post.slug }));
 }
