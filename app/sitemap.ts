@@ -14,6 +14,7 @@ const staticRoutes = [
   "book-consultation",
   "privacy-policy",
   "terms-conditions",
+  "refund-policy",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

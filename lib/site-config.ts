@@ -10,6 +10,14 @@ export const siteConfig = {
   phone: "+92 345 8137005",
   whatsappNumber: "923458137005",
   address: "Remote — serving clients worldwide",
+  // Used on the legal pages. Paddle's domain review requires the seller's
+  // legal name and registered address, and they must match the Paddle account.
+  legal: {
+    name: "Arbab Jahanzaib, trading as CareerAgent",
+    // Fill in your registered business/postal address before submitting to Paddle.
+    registeredAddress: "",
+    refundWindowDays: 14,
+  },
   social: {
     linkedin: "https://linkedin.com/company/careeragent",
     twitter: "https://twitter.com/careeragent",
@@ -39,4 +47,5 @@ export const companyLinks = [
 export const footerLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms-conditions", label: "Terms & Conditions" },
+  { href: "/refund-policy", label: "Refund Policy" },
 ] as const;
